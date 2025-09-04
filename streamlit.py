@@ -1,8 +1,25 @@
-# This is the streamlit code to call the api and see the results in a web app
+"""
+This module defines a Streamlit application for interacting with the FastAPI backend.
+
+Features:
+- Accept user input for two numbers and an operation.
+- Send the input to the FastAPI backend for calculation.
+- Display the result or error message to the user.
+"""
+
+# Import necessary modules
 import streamlit as st
 import requests
 
 def main():
+    """
+    Main function to render the Streamlit application.
+
+    Features:
+    - Accept user input for two numbers and an operation.
+    - Send the input to the FastAPI backend for calculation.
+    - Display the result or error message to the user.
+    """
     st.title("FastAPI and Streamlit Integration")
 
     # Input fields for the two numbers and operation
@@ -14,9 +31,8 @@ def main():
     if st.button("Calculate"):
         try:
             payload = {"operation": operation, "a": a, "b": b}
-            print(payload)
             response = requests.post("http://127.0.0.1:8000/calculate", json=payload)
-            print(response)
+
             if response.status_code == 200:
                 result = response.json().get("result")
                 st.success(f"The result of {operation}ing {a} and {b} is: {result}")
