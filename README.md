@@ -30,7 +30,7 @@ This project demonstrates the integration of FastAPI and Streamlit to create a w
 
 ### Start the FastAPI Backend
 Run the FastAPI app using Uvicorn:
-```bash
+```bash or cmd
 uvicorn app:app --reload
 ```
 - The API will be available at `http://127.0.0.1:8000`.
@@ -38,7 +38,7 @@ uvicorn app:app --reload
 
 ### Start the Streamlit Frontend
 Run the Streamlit app:
-```bash
+```bash or cmd
 streamlit run streamlit.py
 ```
 - The web interface will be available at `http://localhost:8501`.
